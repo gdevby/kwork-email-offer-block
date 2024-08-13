@@ -1,0 +1,64 @@
+*{
+    font-size: 16px;
+}
+form span{
+    white-space: nowrap;
+}
+form+form{
+    margin-top:10px ;
+}
+button {
+    background: #27600a;
+    border: 0;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    transition: 0.4s ease;
+}
+button:hover {
+    background: black;
+    cursor: pointer;
+}
+button:active{
+    transform: scale(1.01);
+}
+
+body{
+    width: min-content;
+}
+
+#form-forbidden-word label{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     gap: 10px;
+ }
+
+
+.active{
+    background: linear-gradient(90deg, #27600a 0%, #ffffff 100%);
+    animation:gradient-bg 1.5s ease 0s infinite normal backwards;
+}
+.green-border{
+    outline: 1px solid #27600a;
+}
+@keyframes gradient-bg {
+    100% {
+        background-position: 400px 0;
+    }
+}
+
+#form-forbidden-word{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
+#work-status label{
+    cursor: pointer;
+    display: flex;
+    align-items: end;
+    gap: 10px;
+}
+
+
