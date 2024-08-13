@@ -1,12 +1,24 @@
 let switchWork = document.body.querySelector('input[name="switch-work"]')
+let statusWorkSpan = document.getElementById('work-status')
 let btnSave = document.getElementById('save-button')
 let textAriaOutput = document.getElementById('textarea-forbidden-words')
+
+/**
+ *
+ * @param {boolean} status
+ */
+function setStatusWorkSpan(status){
+    statusWorkSpan.textContent = status ? 'да' : 'нет'
+}
 
 //получение сохранённых данных (status work)
 chrome.storage.local.get(['status-work','forbidden-words'])
     .then( (result) => {
         if(result?.['status-work']){
             switchWork.checked = result['status-work']
+            setStatusWorkSpan( result['status-work'])
+        }else {
+            setStatusWorkSpan( false)
         }
         if(result?.['forbidden-words']){
             textAriaOutput.value = result?.['forbidden-words']
@@ -25,7 +37,7 @@ btnSave.addEventListener('click',()=>{
 })
 
 switchWork.addEventListener('click',(e)=>{
-
+    setStatusWorkSpan( e.target.checked)
     if(e.target.checked){
         chrome.runtime.sendMessage({'set-status-work':e.target.checked}).then(async response=>{
             if(response?.status === 200){
