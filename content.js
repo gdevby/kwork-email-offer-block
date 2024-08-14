@@ -1,5 +1,5 @@
 const errorAddition = 'в списке запрещённых слов'
-
+const idAlarmDiv = 'kwork-email-offer-block'
 /**
  * we get words from the buffer and check for the presence of words from chrome.storage.
  * If we find them, we display them and report an error.
@@ -23,12 +23,33 @@ function alarmWord   (ev) {
                 }
             }
             if(listForAlarm.length >0){
-                alert(listForAlarm.join(',') + " " +errorAddition)
+                removeAlarmDiv()
+                showAlert(listForAlarm.join(',') + " " +errorAddition)
             }
         }
     })
 }
-
+function showAlert(text){
+    let div = document.createElement('div')
+    div.className = 'alarm'
+    div.id = idAlarmDiv
+    div.innerHTML = ` 
+    <h2> Предупреждение!</h2> 
+    <p class="alarm__text">${text} </p>
+    <div class="alarm__btn-container">
+    <button aria-label="ок" class="alarm__btn">ок</button>
+</div>
+`
+    div.querySelector('button').addEventListener('click',removeAlarmDiv )
+    document.body.prepend(div)
+    console.log(div)
+}
+function removeAlarmDiv() {
+    let alarmDiv = document.getElementById(idAlarmDiv)
+    if(alarmDiv){
+        alarmDiv.remove()
+    }
+}
 
 chrome.storage.local.get(['status-work'])
     .then( (result) => {
@@ -51,4 +72,5 @@ chrome.storage.onChanged.addListener(async (changes, namespace) => {
     }
 
 });
+
 
