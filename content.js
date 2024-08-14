@@ -42,7 +42,6 @@ function showAlert(text){
 `
     div.querySelector('button').addEventListener('click',removeAlarmDiv )
     document.body.prepend(div)
-    console.log(div)
 }
 function removeAlarmDiv() {
     let alarmDiv = document.getElementById(idAlarmDiv)
