@@ -8,7 +8,7 @@ chrome.runtime.onMessage.addListener(
          }
          if (request?.['save-forbidden-world'] !== undefined){
              let worlds = request?.['save-forbidden-world'].split(',')
-             worlds = worlds.map(el=>{return el.trim()})
+             worlds = worlds.map(el=>{return el.trim().toLowerCase()})
              worlds = worlds.filter(el=>el !== '')
              let onlyOne = [...new Set(worlds)]
              chrome.storage.local.set({ 'forbidden-words': onlyOne.join(',') }).then(() => {

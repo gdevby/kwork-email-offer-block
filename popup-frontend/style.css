@@ -47,6 +47,9 @@ body{
         background-position: 400px 0;
     }
 }
+#textarea-forbidden-words{
+    min-height: 200px;
+}
 
 #form-forbidden-word{
     display: flex;
