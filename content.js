@@ -16,8 +16,9 @@ function alarmWord   (ev) {
         if(r["forbidden-words"]){
             let listForbiddenWorld =  r["forbidden-words"].split(',')
             let listForAlarm = []
-            let listFromTextInClipboard = textInClipboard.toLowerCase().split(' ')
-
+            let listFromTextInClipboard = textInClipboard.toLowerCase()
+                .replace(/[^\w\s]+/gi, ' ') //удаляем спец символы.
+                .split(' ')
             for (const forbiddenWorldElement of listForbiddenWorld) {
                 if( listFromTextInClipboard.includes(forbiddenWorldElement)){
                     listForAlarm.push(forbiddenWorldElement)
