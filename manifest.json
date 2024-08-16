@@ -1,6 +1,6 @@
 {
   "name": "Запретные слова. Kwork.ru",
-  "description": "Проверяет наличие запрещенных слов в буфере обмена при вставке в форму на сайте kwork.ru",
+  "description": "Проверяет наличие запрещенных слов в буфере обмена, при вставке в форму на сайте kwork.ru",
   "version": "0.0.0.1",
   "manifest_version": 3,
   "icons": {
@@ -14,7 +14,7 @@
   },
 
   "permissions": [
-   "scripting","storage"
+    "storage"
   ],
   "content_scripts": [
     {
