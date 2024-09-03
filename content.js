@@ -1,6 +1,6 @@
 const errorAddition = 'в списке запрещённых слов'
 const idAlarmDiv = 'kwork-email-offer-block'
-const LIST_EXTENSION_FILE_TO_DOC_TO_TEXT = [  'docx' ]
+const LIST_EXTENSION_FILE_TO_DOC_TO_TEXT = ['docx' ,'doc']
 /**
  * we get words from the buffer and check for the presence of words from chrome.storage.
  * If we find them, we display them and report an error.
