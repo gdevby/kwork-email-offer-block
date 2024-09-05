@@ -27,3 +27,5 @@
 удаляем лиценизю, заменяем манифест фаерфоксом манифестом, архивируем файлы в архив корня заливаем на https://addons.mozilla.org/ru/developers/addon/%D0%B7%D0%B0%D0%BF%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%B5-%D1%81%D0%BB%D0%BE%D0%B2%D0%B0-kwork-ru/versions/submit/
 ## Для хрома
 удаляем лицензию, фаерфокс, реадми файлы, ссылка для магазина https://chrome.google.com/webstore/devconsole/ в пакетах
+
+Используем библиотеку https://github.com/bshopcho/docsToText
